@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="InvestigacionSocial.Views.Navigation.MainMenuPage"
+	Title="Main Menu" 
+	Style="{ StaticResource MainMenuStyle }"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:investigacionSocial="clr-namespace:InvestigacionSocial;assembly=InvestigacionSocial"
+	xmlns:templates="clr-namespace:InvestigacionSocial.Views.Navigation.Templates;assembly=InvestigacionSocial"
+	Icon="{ StaticResource HamburguerIcon }">
+
+    <Grid
+		RowSpacing="0"
+		VerticalOptions="FillAndExpand" 
+		Padding="0,20,0,0"
+		Margin="0,0,0,10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid
+			Grid.Row="0"
+			HorizontalOptions="Start" 
+			VerticalOptions="Start"
+			RowSpacing="0">
+
+
+            <!-- LOGO -->
+            <investigacionSocial:BrandBlock 
+				Grid.Row="0"/>
+
+            <!--<artina:Button
+				Grid.Row="0"
+				Text="BUY"
+				VerticalOptions="Center"
+				HorizontalOptions="End"
+				WidthRequest="80"
+				TranslationX="100"
+				Style="{ StaticResource SecondaryActionButtonStyle }"
+				Clicked="OnBtnCustomClicked"
+			/>-->
+
+
+            <!-- SCREENS COUNTER -->
+            <!-- 
+            <common:Badge 
+				BadgeText="{ Binding AllMenues.Count }" 
+				BadgeTextColor="#FFF" 
+				BadgeBackgroundColor="#F00"
+				HorizontalOptions="End"
+				VerticalOptions="Start"
+			/>-->
+
+        </Grid>
+
+        <ListView 
+		    Grid.Row="1"
+			x:Name="sampleListView" 
+			ItemSelected="OnItemSelected"
+			ItemsSource="{ Binding MenuesGroupedByCategory }"
+			IsGroupingEnabled="true"
+			GroupDisplayBinding="{ Binding Name }"
+			SeparatorVisibility="None"
+			VerticalOptions="FillAndExpand"
+			Style="{ StaticResource MainMenuListViewStyle }"
+			CachingStrategy="RecycleElement">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MainMenuGroupHeaderTemplate />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MainMenuItemTemplate />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

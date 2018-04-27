@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UCAInvestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UCAInvestDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="user_locations" EntityType="UCAInvestDBModel.UserLocation" />
+    <EntitySet Name="user_tokens" EntityType="UCAInvestDBModel.UserToken" />
+    <EntitySet Name="users" EntityType="UCAInvestDBModel.User" />
+    <AssociationSet Name="FK__user_loca__user___4CA06362" Association="UCAInvestDBModel.FK__user_loca__user___4CA06362">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_locations" EntitySet="user_locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user_toke__user___49C3F6B7" Association="UCAInvestDBModel.FK__user_toke__user___49C3F6B7">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_tokens" EntitySet="user_tokens" />
+    </AssociationSet>
+    <EntitySet Name="user_services" EntityType="UCAInvestDBModel.UserService" />
+    <AssociationSet Name="FK__user_serv__clien__5165187F" Association="UCAInvestDBModel.FK__user_serv__clien__5165187F">
+      <End Role="User" EntitySet="users" />
+      <End Role="user_services" EntitySet="user_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user_serv__crane__52593CB8" Association="UCAInvestDBModel.FK__user_serv__crane__52593CB8">
+      <End Role="User" EntitySet="users" />
+      <End Role="user_services" EntitySet="user_services" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserLocation">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="location" Type="Geography" />
+    <Property Name="timestamp" Type="Int64" />
+    <NavigationProperty Name="users" Relationship="UCAInvestDBModel.FK__user_loca__user___4CA06362" FromRole="user_locations" ToRole="users" />
+  </EntityType>
+  <EntityType Name="UserToken">
+    <Key>
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="token" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="expire_timestamp" Type="Int64" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="UCAInvestDBModel.FK__user_toke__user___49C3F6B7" FromRole="user_tokens" ToRole="users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="salt" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="creation_timestamp" Type="Int64" />
+    <Property Name="mobile_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="plate" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="is_provider" Type="Int32" />
+    <NavigationProperty Name="user_locations" Relationship="UCAInvestDBModel.FK__user_loca__user___4CA06362" FromRole="users" ToRole="user_locations" />
+    <NavigationProperty Name="user_tokens" Relationship="UCAInvestDBModel.FK__user_toke__user___49C3F6B7" FromRole="users" ToRole="user_tokens" />
+    <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="user_services" Relationship="UCAInvestDBModel.FK__user_serv__clien__5165187F" FromRole="User" ToRole="user_services" />
+    <NavigationProperty Name="user_services1" Relationship="UCAInvestDBModel.FK__user_serv__crane__52593CB8" FromRole="User" ToRole="user_services" />
+  </EntityType>
+  <Association Name="FK__user_loca__user___4CA06362">
+    <End Type="UCAInvestDBModel.User" Role="users" Multiplicity="1" />
+    <End Type="UCAInvestDBModel.UserLocation" Role="user_locations" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_locations">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user_toke__user___49C3F6B7">
+    <End Type="UCAInvestDBModel.User" Role="users" Multiplicity="1" />
+    <End Type="UCAInvestDBModel.UserToken" Role="user_tokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_tokens">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserService">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_user_id" Type="Int32" />
+    <Property Name="crane_user_id" Type="Int32" />
+    <Property Name="location" Type="Geography" />
+    <Property Name="request_timestamp" Type="Int64" />
+    <Property Name="taken_timestamp" Type="Int64" />
+    <Property Name="completed_timestamp" Type="Int64" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ServiceUser" Relationship="UCAInvestDBModel.FK__user_serv__clien__5165187F" FromRole="user_services" ToRole="User" />
+    <NavigationProperty Name="CraneUser" Relationship="UCAInvestDBModel.FK__user_serv__crane__52593CB8" FromRole="user_services" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__user_serv__clien__5165187F">
+    <End Type="UCAInvestDBModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="UCAInvestDBModel.UserService" Role="user_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_services">
+        <PropertyRef Name="client_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user_serv__crane__52593CB8">
+    <End Type="UCAInvestDBModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="UCAInvestDBModel.UserService" Role="user_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_services">
+        <PropertyRef Name="crane_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

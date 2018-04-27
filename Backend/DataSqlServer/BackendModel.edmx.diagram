@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8eeac199eef84df39858ecc3c2c673b1" Name="Diagram1">
+        <EntityTypeShape EntityType="UCAInvestDBModel.UserLocation" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="UCAInvestDBModel.UserToken" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="UCAInvestDBModel.User" Width="1.5" PointX="0.75" PointY="1.5" />
+        <AssociationConnector Association="UCAInvestDBModel.FK__user_loca__user___4CA06362" />
+        <AssociationConnector Association="UCAInvestDBModel.FK__user_toke__user___49C3F6B7" />
+        <EntityTypeShape EntityType="UCAInvestDBModel.UserService" Width="1.5" PointX="3" PointY="7.125" />
+        <AssociationConnector Association="UCAInvestDBModel.FK__user_serv__clien__5165187F" />
+        <AssociationConnector Association="UCAInvestDBModel.FK__user_serv__crane__52593CB8" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

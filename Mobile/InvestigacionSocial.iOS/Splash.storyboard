@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="23">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="22">
+            <objects>
+                <viewController id="23" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="20"/>
+                        <viewControllerLayoutGuide type="bottom" id="21"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="24">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="27">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.25098039215686274" green="0.25882352941176473" blue="0.67450980392156867" alpha="1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash.png" width="274" height="83"/>
+        <image name="walkthrough_generic_phone_bg.png" width="375" height="667"/>
+        <image name="article_image_0.jpg" width="375" height="240"/>
+        <image name="article_image_1.jpg" width="375" height="240"/>
+        <image name="article_image_2.jpg" width="375" height="240"/>
+        <image name="article_image_3.jpg" width="375" height="240"/>
+        <image name="article_image_4.jpg" width="375" height="274"/>
+        <image name="article_image_5.jpg" width="375" height="225"/>
+        <image name="dashboard_thumbnail_0.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_1.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_2.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_3.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_4.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_5.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_6.jpg" width="125" height="200"/>
+        <image name="dashboard_thumbnail_7.jpg" width="125" height="200"/>
+        <image name="profile_preview.jpg" width="371.5" height="661"/>
+        <image name="signup_bg.jpg" width="371.5" height="661"/>
+        <image name="social_album_0.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_1.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_3.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_4.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_5.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_7.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_8.jpg" width="371.5" height="485.5"/>
+        <image name="social_header_bg_1.jpg" width="371.5" height="362.5"/>
+        <image name="welcome_bg.jpg" width="375" height="667"/>
+        <image name="hamburguer_icon.png" width="18" height="12"/>
+        <image name="logo.png" width="64" height="64"/>
+        <image name="tabs0_icon.png" width="25" height="20"/>
+        <image name="grialflix_main_item_gradient.png" width="360" height="1"/>
+        <image name="welcome_bg_tablet.jpg" width="1024" height="1024"/>
+        <image name="social_album_2.jpg" width="371.5" height="485.5"/>
+        <image name="social_album_6.jpg" width="371.5" height="485.5"/>
+        <image name="login_bg.jpg" width="375" height="667"/>
+        <image name="pass_recovery_bg.jpg" width="371.5" height="661"/>
+        <image name="android_tab_icon.png" width="18" height="21"/>
+        <image name="ios_tab_icon.png" width="18" height="21"/>
+        <image name="ios_tab_icon_active.png" width="18" height="21"/>
+        <image name="android_tab_icon_active.png" width="18" height="21"/>
+        <image name="android_tab_icon_default.png" width="18" height="21"/>
+        <image name="ios_tab_icon_default.png" width="18" height="21"/>
+        <image name="loading_placeholder.png" width="64" height="64"/>
+        <image name="dashboard_thumbnail_8.jpg" width="125" height="200"/>
+        <image name="settings_icon.png" width="20" height="21"/>
+        <image name="friend_thumbnail_27.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_31.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_34.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_55.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_71.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_75.jpg" width="128" height="128"/>
+        <image name="friend_thumbnail_93.jpg" width="128" height="128"/>
+        <image name="user_profile_0.jpg" width="102" height="102"/>
+        <image name="user_profile_1.jpg" width="100" height="100"/>
+        <image name="user_profile_2.jpg" width="100" height="100"/>
+        <image name="social_header_bg_0.jpg" width="375" height="366"/>
+        <image name="product_item_view_overlay.png" width="375" height="300"/>
+        <image name="CorporateThemeThumbnail.png" width="159" height="143"/>
+        <image name="comedy_icon.png" width="24" height="24"/>
+        <image name="drama_icon.png" width="24" height="24"/>
+        <image name="family_icon.png" width="24" height="24"/>
+        <image name="ios_action_icon_active.png" width="24" height="24"/>
+        <image name="ios_action_icon_default.png" width="24" height="24"/>
+        <image name="ios_heroes_icon_active.png" width="24" height="24"/>
+        <image name="ios_heroes_icon_default.png" width="24" height="24"/>
+        <image name="ios_scifi_icon_active.png" width="24" height="24"/>
+        <image name="ios_scifi_icon_active.png.png" width="24" height="24"/>
+        <image name="ios_scifi_icon_default.png" width="24" height="24"/>
+        <image name="responsive_helpers_phone_landscape.png" width="936" height="433"/>
+        <image name="responsive_helpers_phone_portrait.png" width="432" height="882"/>
+        <image name="responsive_helpers_tablet_landscape.png" width="1302" height="893"/>
+        <image name="responsive_helpers_tablet_portrait.png" width="886" height="1257"/>
+        <image name="generic_bg_image.jpg" width="375" height="667"/>
+        <image name="products_logos.png" width="227" height="44"/>
+        <image name="uxdivers_logo_about.png" width="134" height="35"/>
+        <image name="vs_partner_logo.png" width="115" height="49"/>
+        <image name="corporate_theme_thumbnail.png" width="159" height="143"/>
+        <image name="dark_theme_thumbnail.png" width="159" height="143"/>
+        <image name="light_theme_thumbnail.png" width="159" height="142"/>
+        <image name="product_item_4.jpg" width="375" height="331"/>
+        <image name="product_item_2.jpg" width="375" height="331"/>
+        <image name="product_item_6.jpg" width="375" height="331"/>
+        <image name="product_item_7.jpg" width="375" height="331"/>
+        <image name="product_item_0.jpg" width="375" height="331"/>
+        <image name="product_item_3.jpg" width="375" height="331"/>
+        <image name="product_item_1.jpg" width="375" height="331"/>
+        <image name="product_item_5.jpg" width="375" height="331"/>
+        <image name="login_bg_tablet.jpg" width="1024" height="1024"/>
+        <image name="pass_recovery_bg_tablet.jpg" width="1024" height="1024"/>
+        <image name="custom_nav_bg.jpg" width="375" height="64"/>
+        <image name="status_bar_gradient.png" width="375" height="44"/>
+        <image name="walkthrough_bg_0.jpg" width="375" height="667"/>
+        <image name="walkthrough_bg_1.jpg" width="375" height="667"/>
+        <image name="walkthrough_bg_2.jpg" width="375" height="667"/>
+        <image name="custom_theme_thumbnail.png" width="160" height="143"/>
+        <image name="social_album_9.jpg" width="200" height="200"/>
+    </resources>
+</document>

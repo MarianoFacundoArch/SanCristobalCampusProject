@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="InvestigacionSocial.Views.Services.AvailableServicesMapPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <googleMaps:Map Grid.Row="0"
+                            x:Name="MyMap"
+                            WidthRequest="320" 
+                            HeightRequest="200" />
+            <StackLayout Grid.Row="2" VerticalOptions="Center">
+                <ActivityIndicator x:Name="indicatorWorking" IsRunning="True" IsVisible="False"></ActivityIndicator>
+                <Label HorizontalOptions="CenterAndExpand" x:Name="descriptionLabel"></Label>
+                <Button x:Name="requestButton" Text="Prestar asistecia" HorizontalOptions="Center" Style="{StaticResource SaveButtonStyle}" IsEnabled="False" Clicked="RequestButton_OnClicked"></Button>
+            </StackLayout>
+            
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

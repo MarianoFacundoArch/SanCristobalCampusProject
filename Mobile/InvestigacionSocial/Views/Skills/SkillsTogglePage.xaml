@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvestigacionSocial.Views.Skills.SkillsTogglePage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbarItemAgregar" Name="Guardar" Order="Primary" Icon="ic_save_white_48dp.png" Text="Guardar" Priority="0" Clicked="MenuItem_OnClicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ListView x:Name="skillsDrawerList"
+                      SeparatorVisibility="Default"
+                      BackgroundColor="#e8e8e8"
+              IsRefreshing="True"
+                      HasUnevenRows="False" IsPullToRefreshEnabled="True" Refreshing="CompaneroDrawerList_OnRefreshing" ItemSelected="CompaneroDrawerList_OnItemSelected">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem x:Name="menuItemEliminar" Clicked="MenuItemEliminar_OnClicked" CommandParameter="{Binding .}" Text="Eliminar" Icon="ic_delete_white_48dp.png"></MenuItem>
+                    </ViewCell.ContextActions>
+
+                    <!-- Main design for our menu items -->
+                    <StackLayout Orientation="Vertical">
+
+                        <StackLayout Orientation="Horizontal"
+                                     VerticalOptions="Center" 
+                                     HorizontalOptions="FillAndExpand" 
+                                     Padding="10,10,10,10">
+                            <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="StartAndExpand">
+
+                                <Label Text="{Binding title}"
+                                           FontSize="Medium"
+                                           x:Name="labelApellido"/>
+
+
+                            </StackLayout>
+
+                            <Switch x:Name="switchUsuario"  IsEnabled="{Binding habilitado}" IsToggled="{Binding activado}" Toggled="SwitchUsuario_OnToggled" ></Switch>
+
+
+                        </StackLayout>
+
+
+
+                    </StackLayout>
+
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Footer>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label x:Name="labelDisponibles" Text="Seleccione sus aptitudes"></Label>
+            </StackLayout>
+        </ListView.Footer>
+    </ListView>
+</ContentPage>

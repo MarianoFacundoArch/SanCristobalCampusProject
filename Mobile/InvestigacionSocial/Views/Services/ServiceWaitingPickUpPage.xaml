@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvestigacionSocial.Views.Services.ServiceWaitingPickUpPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                    <ActivityIndicator   IsVisible="True" IsRunning="True"></ActivityIndicator>
+                    <Label  Text="Esperando que una grua disponible tome el servicio..."></Label>
+                </StackLayout>
+                
+                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" x:Name="labelTip" TextColor="CornflowerBlue"></Label>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

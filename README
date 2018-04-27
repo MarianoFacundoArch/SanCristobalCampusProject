@@ -1,0 +1,6 @@
+Se desarrolló una aplicación multi plataforma nativa en Xamarin que conecta a los clientes de San Cristobal Seguros con los prestadores de servicios de grúas. Permitiendo una experiencia óptima ante una eventualidad mecánica. 
+El cliente, desde la comodidad de la app, puede ver las grúas disponibles cercanas y solicitar asistencia, esto notifica a todas las grúas del radio configurado que estén disponibles y cubran el desperfecto que el cliente reporto. Cuando una grúa toma el servicio, se establece la conexión que permite al usuario ver el avance de la misma, en cuánto tiempo arribará y así mismo contactar al prestador. Lo mismo del lado del prestador, al que, además, se le abrirá el mapa con indicaciones para arribar al destino. 
+El prestador del servicio visualizará, en adición a la posición donde se solicitó la grúa, la posición en tiempo real del usuario, para tener en cuenta si el mismo se alejó del vehículo.
+También se implementara un sistema de clasificación para las grúas como también para los clientes.
+Toda la información que se recopila relacionada a tiempos y distancias se podrá visualizar de una plataforma web para poder gestionar los pagos a las prestadoras de servicio de grúa.
+ Se optó por el modelo de solicitar una grúa y que alguna disponible acepte para mejorar la experiencia del cliente.

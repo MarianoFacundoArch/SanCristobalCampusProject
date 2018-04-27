@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.MapsPlugin</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.MapsPlugin.CrossMapsPlugin">
+            <summary>
+            Cross platform MapsPlugin implemenations
+            </summary>
+        </member>
+        <member name="P:Plugin.MapsPlugin.CrossMapsPlugin.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="T:Plugin.MapsPlugin.MapsPluginImplementation">
+            <summary>
+            Implementation for MapsPlugin
+            </summary>
+        </member>
+        <member name="M:Plugin.MapsPlugin.MapsPluginImplementation.PinTo(System.String,System.Double,System.Double,System.Int32)">
+            <summary>
+            Navigate to a particular Coordinate
+            </summary>
+            <param name="name">Label to display</param>
+            <param name="latitude">Latitude</param>
+            <param name="longitude">Longitude</param>
+            <param name="zoomLevel">Zoom Level</param>
+        </member>
+        <member name="M:Plugin.MapsPlugin.MapsPluginImplementation.NavigateTo(System.String,System.Double,System.Double,Plugin.MapsPlugin.Abstractions.NavigationType)">
+            <summary>
+            Navigate to specific latitude and longitude.
+            </summary>
+            <param name="name">Label to display</param>
+            <param name="latitude">Lat</param>
+            <param name="longitude">Long</param>
+            <param name="navigationType">Type of navigation</param>
+        </member>
+        <member name="M:Plugin.MapsPlugin.MapsPluginImplementation.NavigateTo(System.String,System.String,System.String,System.String,System.String,System.String,System.String,Plugin.MapsPlugin.Abstractions.NavigationType)">
+            <summary>
+            Navigate to an address
+            </summary>
+            <param name="name">Label to display</param>
+            <param name="street">Street</param>
+            <param name="city">City</param>
+            <param name="state">Sate</param>
+            <param name="zip">Zip</param>
+            <param name="country">Country</param>
+            <param name="countryCode">Country Code if applicable</param>
+            <param name="navigationType">Navigation type</param>
+        </member>
+    </members>
+</doc>

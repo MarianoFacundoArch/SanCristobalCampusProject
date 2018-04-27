@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="InvestigacionSocial.Views.Services.RequestServicePage" Title="Solicitar grua">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <googleMaps:Map Grid.Row="1" Grid.Column="1"
+                                x:Name="requestMap"
+                                WidthRequest="500" 
+                                HeightRequest="400"  />
+
+                <Label Grid.Row="2" Grid.Column="1" FontSize="Small" Text="Por favor mueva el marcador a donde desee llamar al auxilio." HorizontalOptions="CenterAndExpand"></Label>
+                
+                <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+                    <Label x:Name="TitleLabel" FontSize="Medium" Text="Solicitar Grua" HorizontalOptions="CenterAndExpand"></Label>
+                    
+                    <Label Text="Tipo de inconveniente:"></Label>
+                    <Picker x:Name="problemPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>Pinchadura de neumáticos</x:String>
+                            <x:String>Sin combustible</x:String>
+                            <x:String>Sin bateria</x:String>
+                            <x:String>No lo se</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                    <Label Text="Describa la incidencia:"></Label>
+                    <Entry x:Name="descriptionEntry"></Entry>
+                    <ActivityIndicator x:Name="indicatorWorking" IsVisible="False" IsRunning="True"></ActivityIndicator>
+                    
+                    <Button Grid.Row="1" x:Name="requestButton" Text="Solicitar grua" HorizontalOptions="Center" Style="{StaticResource SaveButtonStyle}" Clicked="RequestButton_OnClicked"></Button>
+
+                </StackLayout>
+                
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

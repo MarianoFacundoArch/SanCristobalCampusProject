@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UCAInvestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="user_locations">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="location" Type="geography" />
+    <Property Name="timestamp" Type="bigint" />
+  </EntityType>
+  <EntityType Name="user_services">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_user_id" Type="int" />
+    <Property Name="crane_user_id" Type="int" />
+    <Property Name="location" Type="geography" />
+    <Property Name="request_timestamp" Type="bigint" />
+    <Property Name="taken_timestamp" Type="bigint" />
+    <Property Name="completed_timestamp" Type="bigint" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="user_tokens">
+    <Key>
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="token" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="expire_timestamp" Type="bigint" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="150" />
+    <Property Name="password" Type="varchar" MaxLength="300" />
+    <Property Name="salt" Type="varchar" MaxLength="150" />
+    <Property Name="first_name" Type="varchar" MaxLength="255" />
+    <Property Name="last_name" Type="varchar" MaxLength="255" />
+    <Property Name="creation_timestamp" Type="bigint" />
+    <Property Name="mobile_phone" Type="varchar" MaxLength="255" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="plate" Type="varchar" MaxLength="7" />
+    <Property Name="is_provider" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__user_loca__user___4CA06362">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="user_locations" Type="Self.user_locations" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_locations">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user_serv__clien__5165187F">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="user_services" Type="Self.user_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_services">
+        <PropertyRef Name="client_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user_serv__crane__52593CB8">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="user_services" Type="Self.user_services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_services">
+        <PropertyRef Name="crane_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user_toke__user___49C3F6B7">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="user_tokens" Type="Self.user_tokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_tokens">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UCAInvestDBModelStoreContainer">
+    <EntitySet Name="user_locations" EntityType="Self.user_locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_services" EntityType="Self.user_services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_tokens" EntityType="Self.user_tokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__user_loca__user___4CA06362" Association="Self.FK__user_loca__user___4CA06362">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_locations" EntitySet="user_locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user_serv__clien__5165187F" Association="Self.FK__user_serv__clien__5165187F">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_services" EntitySet="user_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user_serv__crane__52593CB8" Association="Self.FK__user_serv__crane__52593CB8">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_services" EntitySet="user_services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user_toke__user___49C3F6B7" Association="Self.FK__user_toke__user___49C3F6B7">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_tokens" EntitySet="user_tokens" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

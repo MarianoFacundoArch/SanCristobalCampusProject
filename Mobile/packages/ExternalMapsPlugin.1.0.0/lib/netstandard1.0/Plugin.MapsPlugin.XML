@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.MapsPlugin</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.MapsPlugin.CrossMapsPlugin">
+            <summary>
+            Cross platform MapsPlugin implemenations
+            </summary>
+        </member>
+        <member name="P:Plugin.MapsPlugin.CrossMapsPlugin.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+    </members>
+</doc>

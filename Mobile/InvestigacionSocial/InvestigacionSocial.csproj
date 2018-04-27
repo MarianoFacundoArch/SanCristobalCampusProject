@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>InvestigacionSocial</AssemblyName>
+    <RootNamespace>InvestigacionSocial</RootNamespace>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <ReleaseVersion>2.0</ReleaseVersion>
+    <Configurations>Debug;Release;Gorilla</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ExternalMapsPlugin" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.0" NoWarn="NU1701" />
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
+    <PackageReference Include="Plugin.Notifications" Version="4.0.2" />
+    <PackageReference Include="UXDivers.Effects" Version="0.6.3" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.3.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.1" />
+    <PackageReference Include="UXDivers.Artina.Shared.Base" Version="2.6.9" />
+    <PackageReference Include="UXDivers.Artina.Shared" Version="2.6.9" />
+    <PackageReference Include="UXDivers.Artina.Controls.Tab" Version="2.6.9" />
+    <PackageReference Include="UXDivers.Artina.Controls.Repeater" Version="2.6.9" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="2.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonCross\CommonCross.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Common\BrandBlock.xaml.cs">
+      <DependentUpon>BrandBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Common\Badge.xaml.cs">
+      <DependentUpon>Badge.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Common\CustomActivityIndicator.xaml.cs">
+      <DependentUpon>CustomActivityIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Common\Rating.xaml.cs">
+      <DependentUpon>Rating.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Common\RoundedLabel.xaml.cs">
+      <DependentUpon>RoundedLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Navigation\WelcomeStarterPage.xaml.cs">
+      <DependentUpon>WelcomeStarterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\MyAppTheme.xaml.cs">
+      <DependentUpon>MyAppTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\GrialDarkTheme.xaml.cs">
+      <DependentUpon>GrialDarkTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\GrialLightTheme.xaml.cs">
+      <DependentUpon>GrialLightTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Theme\TabControlSamplePage.xaml.cs">
+      <DependentUpon>TabControlSamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\GrialEnterpriseTheme.xaml.cs">
+      <DependentUpon>GrialEnterpriseTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resx\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resx\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

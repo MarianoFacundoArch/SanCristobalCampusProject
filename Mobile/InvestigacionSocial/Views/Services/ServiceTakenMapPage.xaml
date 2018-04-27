@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="InvestigacionSocial.Views.Services.ServiceTakenMapPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <googleMaps:Map Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                            x:Name="MyMap"
+                            WidthRequest="320" 
+                            HeightRequest="200" />
+            <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <ActivityIndicator x:Name="indicatorWorking" IsRunning="True" IsVisible="True"></ActivityIndicator>
+                <Label x:Name="nameLabel"></Label>
+                <Label x:Name="phoneLabel"></Label>
+                <Label x:Name="plateLabel"></Label>
+                <Label x:Name="etaLabel" TextColor="Blue" HorizontalOptions="CenterAndExpand"></Label>
+                <Button x:Name="contactButton" Text="Contactar" HorizontalOptions="Center" Style="{StaticResource SaveButtonStyle}" IsEnabled="False" Clicked="ContactButton_OnClicked"></Button>
+                <Button x:Name="endButton" Text="Finalizar servicio" HorizontalOptions="Center" Style="{StaticResource DeleteButtonStyle}" IsEnabled="False" Clicked="EndButton_OnClicked"></Button>
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

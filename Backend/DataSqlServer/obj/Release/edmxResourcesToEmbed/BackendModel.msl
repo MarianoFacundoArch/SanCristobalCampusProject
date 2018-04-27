@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UCAInvestDBModelStoreContainer" CdmEntityContainer="UCAInvestDBEntities">
+    <EntitySetMapping Name="user_locations">
+      <EntityTypeMapping TypeName="UCAInvestDBModel.UserLocation">
+        <MappingFragment StoreEntitySet="user_locations">
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_tokens">
+      <EntityTypeMapping TypeName="UCAInvestDBModel.UserToken">
+        <MappingFragment StoreEntitySet="user_tokens">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="expire_timestamp" ColumnName="expire_timestamp" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="UCAInvestDBModel.User">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_provider" ColumnName="is_provider" />
+          <ScalarProperty Name="plate" ColumnName="plate" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+          <ScalarProperty Name="creation_timestamp" ColumnName="creation_timestamp" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_services">
+      <EntityTypeMapping TypeName="UCAInvestDBModel.UserService">
+        <MappingFragment StoreEntitySet="user_services">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="completed_timestamp" ColumnName="completed_timestamp" />
+          <ScalarProperty Name="taken_timestamp" ColumnName="taken_timestamp" />
+          <ScalarProperty Name="request_timestamp" ColumnName="request_timestamp" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="crane_user_id" ColumnName="crane_user_id" />
+          <ScalarProperty Name="client_user_id" ColumnName="client_user_id" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

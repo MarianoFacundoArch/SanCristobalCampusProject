@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shared="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+             xmlns:local="clr-namespace:InvestigacionSocial;assembly=InvestigacionSocial"
+             x:Class="InvestigacionSocial.Views.Login.LoginPage">
+    <!--MAIN CONTAINER-->
+    <Grid>
+        <!---BACKGROUND IMAGE-->
+        <Image Style="{StaticResource LoginBackgroundImage}" />
+
+        <ScrollView Padding="{ StaticResource MainWrapperPadding }">
+            <!-- MAIN CONTAINER -->
+            <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- LOGO -->
+                <Grid Grid.Row="0" WidthRequest="60" HeightRequest="60" Margin="20" VerticalOptions="End" HorizontalOptions="Start">
+
+                    <BoxView BackgroundColor="{ DynamicResource AccentColor }" />
+
+                    <Label TextColor="{ DynamicResource OverImageTextColor }" FontSize="42" Text="{ x:Static local:IconFont.OnlineSupport }" Style="{StaticResource FontIcon}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </Grid>
+
+                <!-- CLOSE ICON -->
+                <Label Grid.Row="0" Style="{ DynamicResource IconCloseLabelStyle }" HorizontalOptions="End" VerticalOptions="Start" TranslationX="-20" TranslationY="35">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCloseButtonClicked" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!--CLAIM TEXT-->
+                <StackLayout Grid.Row="1" Spacing="10" Padding="20,10" Orientation="Vertical" VerticalOptions="Center">
+
+                    <Label LineBreakMode="WordWrap" Text="Acceda a su cuenta utilizando su usuario y contraseña" TextColor="{ DynamicResource OverImageTextColor }" VerticalTextAlignment="Center" FontAttributes="Bold">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="26" Tablet="36" />
+                        </Label.FontSize>
+                    </Label>
+
+                    <Label LineBreakMode="WordWrap" Text="Acceda a su cuenta de San Cristobal Seguros." TextColor="{ DynamicResource OverImageTextColor }" VerticalTextAlignment="Center">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="17" Tablet="27" />
+                        </Label.FontSize>
+                    </Label>
+
+                    <BoxView Style="{DynamicResource BrandNameOrnamentStyle}" BackgroundColor="{ DynamicResource OverImageTextColor }" />
+
+                </StackLayout>
+
+
+                <!---FIELDS CONTAINER-->
+                <Grid Grid.Row="2" Padding="40,0" ColumnSpacing="0" RowSpacing="0" VerticalOptions="CenterAndExpand" HeightRequest="130">
+
+                    <StackLayout Grid.Row="0" VerticalOptions="StartAndExpand">
+
+                        <!---EMAIL ENTRY-->
+                        <Entry x:Name="userEntry" Placeholder="Usuario de acceso" Style="{StaticResource ArtinaLoginEntryStyle}">
+
+
+                        </Entry>
+
+                    </StackLayout>
+
+                    <!---PASSWORD FIELD-->
+                    <Entry x:Name="passwordEntry" Grid.Row="2" Placeholder="Password" IsPassword="true" Style="{StaticResource ArtinaLoginEntryStyle}" VerticalOptions="StartAndExpand" />
+
+                </Grid>
+
+
+                <!-- FOOTER -->
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="EndAndExpand" Padding="20" Grid.Row="3">
+
+                    <ActivityIndicator x:Name="indicatorLogin" IsVisible="False" IsRunning="True"></ActivityIndicator>
+
+
+                    <shared:Button x:Name="loginButton" Style="{StaticResource PrimaryActionButtonStyle}" VerticalOptions="End" Text="Acceder" WidthRequest="{ shared:OnOrientationDouble
+								LandscapePhone=200,
+								LandscapeTablet=400 }" HorizontalOptions="{ shared:OnOrientationLayoutOptions
+								PortraitPhone=Fill,
+								LandscapePhone=Center,
+								PortraitTablet=Fill,
+								LandscapeTablet=Center }" Clicked="LoginButton_OnClicked"/>
+
+                    <shared:Button x:Name="registerButton" Style="{StaticResource PrimaryActionButtonStyle}" VerticalOptions="End" Text="Registrarse" WidthRequest="{ shared:OnOrientationDouble
+								LandscapePhone=200,
+								LandscapeTablet=400 }" HorizontalOptions="{ shared:OnOrientationLayoutOptions
+								PortraitPhone=Fill,
+								LandscapePhone=Center,
+								PortraitTablet=Fill,
+								LandscapeTablet=Center }" Clicked="RegisterButton_OnClicked"/>
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
